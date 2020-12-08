@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Es6 - rest operator em funções</title>
+  </head>
+  <body>
+    <script>
+      const data = {
+        nome: "GabrielM",
+        sobre: "Souza",
+      };
+
+      //destructor de objetos
+      function date({ nome, sobre }) {
+        return console.log(nome, sobre);
+      }
+
+      function soma(a, b, ...banana) {
+        return console.log(a + b), console.log(banana[0] * 3);
+      }
+      date(data);
+      soma(2, 5, 3, 6);
+    </script>
+  </body>
+</html>
