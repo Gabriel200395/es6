@@ -13,13 +13,61 @@
         console.log((array[index] = index * 3));
       });*/
 
-      //let numbers = array
-      //.map((index) => {
-      //return index * 2;
-      //})
-      //.filter((index) => index < 5);
+      /*
+       const valid = false;
 
-      //console.log(numbers);
+      const validacao = !valid
+        ? array.map((index) => index * 2)
+        : console.log("erro ao buscar dados");
+ 
+      */
+
+      const usersList = [
+        { name: "João", credit: 600 },
+        { name: "Maria", credit: 900 },
+        { name: "Carlos", credit: 300 },
+        { name: "Vanessa", credit: 200 },
+      ];
+
+      // filter serve para filtrar dado;
+      const buscar = usersList.filter((user) => {
+        return user.credit > 300;
+      });
+
+      // find e uma forma de valição
+      /*const carlos = usersList.find(
+        (user, index, array) => user.name === "Carlos"
+      );*/
+
+      // ele retorna o indice do elemento
+      const carlos = usersList.findIndex(
+        (user, index, array) => user.name === "Carlos"
+      );
+
+      //serve para validar todo o nosso array
+      const result1 = usersList.every(
+        (user, index, array) => user.credit < 1000
+      );
+
+      //server para verificar um elemento do array
+      const result = usersList.some(
+        (user, index, array) => user.credit === 300
+      );
+      //serve para ordena o nosso array
+      const numbersList = [4, 5, 7];
+      const orderedList = numbersList.sort();
+
+      //reduce serve para reduzir todos os nossos valores do
+      const total = numbersList.reduce(
+        (total, numberElement) => total + numberElement
+      );
+
+      console.log(total);
+      console.log(orderedList);
+
+      console.log(result);
+
+      console.log(buscar);
     </script>
   </body>
 </html>
