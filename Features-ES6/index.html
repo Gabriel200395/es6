@@ -8,6 +8,13 @@
   <body>
     <script>
       let array = [1, 2, 3, 4, 5, 6];
+      let [a, b, c, d, e, f] = array;
+
+      const validar = (a, b, ...params) => {
+        console.log(a, b, ...params);
+      };
+
+      validar(a, b, c, d, e, f);
 
       /*array.forEach((index) => {
         console.log((array[index] = index * 3));
