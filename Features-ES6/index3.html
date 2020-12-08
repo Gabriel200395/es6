@@ -10,18 +10,22 @@
       const data = {
         nome: "GabrielM",
         sobre: "Souza",
+
+        Sobre: {
+          ts: "u",
+        },
       };
-
-      //destructor de objetos
-      function date({ nome, sobre }) {
-        return console.log(nome, sobre);
+      // tem com fazer com spread e rest pegando parametros
+      function receber(...params) {
+        params.map((it) => console.log(it * 2));
       }
 
-      function soma(a, b, ...banana) {
-        return console.log(a + b), console.log(banana[0] * 3);
+      function date({ nome, sobre, Sobre: { ts } }) {
+        return console.log(nome, sobre, ts);
       }
+
       date(data);
-      soma(2, 5, 3, 6);
+      receber(5, 2, 6, 7);
     </script>
   </body>
 </html>
