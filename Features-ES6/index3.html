@@ -6,22 +6,27 @@
     <title>Features Es6 - rest operator em funções</title>
   </head>
   <body>
+    <div id="res"></div>
     <script>
       const data = {
         nome: "GabrielM",
         sobre: "Souza",
-
-        Sobre: {
-          ts: "u",
+        nascimento: {
+          dt: "20/03/95",
         },
       };
       // tem com fazer com spread e rest pegando parametros
       function receber(...params) {
-        params.map((it) => console.log(it * 2));
+        params.map((it) => {
+          var resposta = document.getElementById("res");
+          let item = document.createElement("li");
+          item.textContent = `${it}`;
+          resposta.appendChild(item);
+        });
       }
 
-      function date({ nome, sobre, Sobre: { ts } }) {
-        return console.log(nome, sobre, ts);
+      function date({ nome, sobre, nascimento: { dt } }) {
+        return console.log(nome, sobre, dt);
       }
 
       date(data);
