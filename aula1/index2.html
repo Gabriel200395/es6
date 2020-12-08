@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Es6 - spred operator e rest</title>
+  </head>
+  <body>
+    <script>
+      const nomes = {
+        nome: "Gabriel",
+        nome1: "Erica",
+        nome2: "Sarah",
+        nome3: "Isaias",
+      };
+
+      const sobreNomes = {
+        sobreG: "souza",
+        sobreE: "santos",
+        sobreI: "araujo",
+        sobreS: "nk",
+      };
+
+      // spread operator
+      const receberNomes = { ...nomes };
+      console.log(receberNomes);
+
+      //rest operator
+      const { sobreG, sobreE, ...c } = sobreNomes;
+      console.log(c);
+    </script>
+  </body>
+</html>
