@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Es6 - Destruturação</title>
+  </head>
+  <body>
+    <script>
+      // array
+      const array = [1, 2, 3];
+      const [a, b, c] = array;
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      //objeto
+      const endereco = {
+        rua: 124,
+        cidade: "samambaia",
+        uf_cidade: {
+          uf: "df",
+        },
+      };
+
+      const {
+        rua,
+        cidade,
+        uf_cidade: { uf },
+      } = endereco;
+
+      console.log(rua);
+      console.log(cidade);
+      console.log(uf);
+    </script>
+  </body>
+</html>
