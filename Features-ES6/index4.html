@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Es6 - rest operator em funções</title>
+  </head>
+  <body>
+    <input type="text" id="search" />
+    <div id="res"></div>
+    <script src="./tets.json"></script>
+    <script>
+      const dat = JSON.parse(data);
+      console.log(dat);
+      var array = [
+        {
+          name: "Gabriel",
+        },
+        {
+          name: "João",
+        },
+      ];
+
+      const pesquisar = document.getElementById("search");
+      pesquisar.addEventListener("keyup", pesquisaElement);
+
+      function pesquisaElement(event) {
+        const valueElement = event.target.value;
+        const filtrarElement = array.filter((el) =>
+          el.name.includes(valueElement)
+        );
+        buscarElementArray(filtrarElement);
+      }
+
+      function buscarElementArray(array) {
+        const resposta = document.getElementById("res");
+        resposta.innerHTML = "";
+
+        const dadosArray = array
+          .map((data) => {
+            return `<p>${data.name}</p>`;
+          })
+          .join("");
+
+        resposta.innerHTML += dadosArray;
+        return array;
+      }
+
+      buscarElementArray(array);
+    </script>
+  </body>
+</html>
