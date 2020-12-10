@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Es6 - rest operator em funções</title>
+  </head>
+  <body>
+    <input type="button" value="adicionar" id="add" />
+    <input type="text" id="vlar" />
+    <div id="res"></div>
+    <script src="./tets.json"></script>
+    <script>
+      let arrayElements = [];
+      let adicionar = document.getElementById("add");
+      adicionar.addEventListener("click", receberElements);
+
+      function receberElements() {
+        let valor = document.getElementById("vlar").value;
+        if (valor.length === 0) {
+          alert("escreva algo");
+        } else {
+          adicionarItem(valor);
+          createElement(arrayElements);
+        }
+      }
+
+      function adicionarItem(item) {
+        const addItem = arrayElements.push(item);
+        console.log(addItem);
+        console.log(arrayElements);
+
+        return item;
+      }
+
+      function createElement(array) {
+        for (i = 0; i < array.length; i++) {
+          const itemArray = array[i];
+          const element = document.createElement("li");
+          element.textContent = `${itemArray}`;
+          const addLayout = document.getElementById("res");
+          addLayout.appendChild(element);
+        }
+
+        return array;
+      }
+    </script>
+  </body>
+</html>
