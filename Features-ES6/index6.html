@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Es6 - rest operator em funções</title>
+    <style>
+      #el {
+        margin: 10px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="adicionar" id="add" />
+    <input type="text" id="vlar" />
+    <div id="res"></div>
+    <script src="./tets.json"></script>
+    <script>
+      const array = [
+        {
+          nome: "Gabriel",
+        },
+        {
+          nome: "Souza",
+        },
+        {
+          nome: "Vinicius",
+        },
+      ];
+      const [a, b, c] = array;
+      const ModificarNome = { ...array, [0]: "Joao" };
+      const arrayNovo = [];
+      console.log(arrayNovo);
+
+      arrayNovo.push(ModificarNome[0]);
+    </script>
+  </body>
+</html>
