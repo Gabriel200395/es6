@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Features Es6 - rest operator em funções</title>
+    <style>
+      #el {
+        margin: 10px 15px;
+      }
+    </style>
   </head>
   <body>
     <input type="button" value="adicionar" id="add" />
@@ -14,6 +19,7 @@
       let arrayElements = [];
       let adicionar = document.getElementById("add");
       adicionar.addEventListener("click", receberElements);
+      const addLayout = document.getElementById("res");
 
       function receberElements() {
         let valor = document.getElementById("vlar").value;
@@ -27,22 +33,41 @@
 
       function adicionarItem(item) {
         const addItem = arrayElements.push(item);
-        console.log(addItem);
-        console.log(arrayElements);
-
         return item;
       }
 
       function createElement(array) {
+        addLayout.innerHTML = "";
+
         for (i = 0; i < array.length; i++) {
           const itemArray = array[i];
           const element = document.createElement("li");
+          const botao = document.createElement("button");
+          botao.textContent = "remover";
+          botao.setAttribute("onclick", "removerElement(arrayElements)");
           element.textContent = `${itemArray}`;
-          const addLayout = document.getElementById("res");
+          element.appendChild(botao);
+          element.setAttribute("id", "el");
           addLayout.appendChild(element);
         }
 
         return array;
+      }
+
+      function removerElement(array) {
+        for (i = 0; i < array.length; i++) {
+          const pos = array[i];
+          array.splice(pos);
+          console.log(array);
+        }
+        removerDom(addLayout);
+      }
+
+      function removerDom(element) {
+        for (i = 0; i < element.children.length; i++) {
+          pos = element.children[i];
+          pos.remove();
+        }
       }
     </script>
   </body>
