@@ -36,15 +36,39 @@
         return item;
       }
 
+      /* 
+      ES6
       function createElement(array) {
         addLayout.innerHTML = "";
 
+        const el = array
+          .map((v) => {
+            return `
+              <div style="display: flex">
+              <li>${v}</li>
+              <button onclick=removerElement(arrayElements,removerDom())">Remover</button>
+              </div>
+            `;
+          })
+          .join(" ");
+
+        addLayout.innerHTML += el;
+        return array;
+      }  
+      }
+      */
+
+      function createElement(array) {
+        addLayout.innerHTML = "";
         for (i = 0; i < array.length; i++) {
           const itemArray = array[i];
           const element = document.createElement("li");
           const botao = document.createElement("button");
           botao.textContent = "remover";
-          botao.setAttribute("onclick", "removerElement(arrayElements)");
+          botao.setAttribute(
+            "onclick",
+            "removerElement(arrayElements,removerDom())"
+          );
           element.textContent = `${itemArray}`;
           element.appendChild(botao);
           element.setAttribute("id", "el");
@@ -54,20 +78,25 @@
         return array;
       }
 
-      function removerElement(array) {
+      /* 
+      ES6 // reformulando codigo
+       function removerElement(array, item) {
+        array.filter((element) => array.splice(element) && item.remove());
+        console.log(array);
+      */
+
+      function removerElement(array, func) {
         for (i = 0; i < array.length; i++) {
           const pos = array[i];
           array.splice(pos);
           console.log(array);
         }
-        removerDom(addLayout);
+
+        return array, func;
       }
 
-      function removerDom(element) {
-        for (i = 0; i < element.children.length; i++) {
-          pos = element.children[i];
-          pos.remove();
-        }
+      function removerDom() {
+        document.getElementById("el").remove();
       }
     </script>
   </body>
