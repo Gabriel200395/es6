@@ -16,11 +16,10 @@
       ];
 
       // ES6
-      const [a, b, c, d, e] = users;
-      const receberDadosUsers = { a, b, c, d, e };
+      const receberDadosUsers = { ...users };
       console.log(receberDadosUsers);
 
-      // JS
+      // JS exemplo
       console.log(users[0].age + " / " + users[0].name);
       console.log(users[1].age + " / " + users[1].name);
       console.log(users[2].age + " / " + users[2].name);
@@ -36,7 +35,7 @@
 
       console.log(idadeUsersM);
 
-      //JS
+      //JS exemplo
       for (pos in users) {
         if (users[pos].age > 18) {
           console.log(`os usuarios maiores de idade são:  ${users[pos].name}`);
