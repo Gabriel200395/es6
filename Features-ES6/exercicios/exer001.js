@@ -6,13 +6,6 @@ const users = [
   { id: 5, name: "Louis", age: 15 },
 ];
 
-// ES6
-const receberDadosUsers = { ...users };
-console.log(receberDadosUsers);
-
-// JS exemplo
-console.log(users[0].age + " / " + users[0].name);
-console.log(users[1].age + " / " + users[1].name);
-console.log(users[2].age + " / " + users[2].name);
-console.log(users[3].age + " / " + users[3].name);
-console.log(users[4].age + " / " + users[4].name);
+users.forEach((user) => {
+  console.log(`nome : ${user.name}   idade: ${user.name}`);
+});
