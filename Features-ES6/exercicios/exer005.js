@@ -6,24 +6,12 @@ const users = [
   { id: 5, name: "Louis", age: 15 },
 ];
 
-//peguei todos os dados do usuarios
-const receberIdadesUsers = { ...users };
-console.log(receberIdadesUsers);
+const total = users.reduce((total, user) => total + user.age, 0);
 
-const somarIdadesUsers = [];
+console.log(total);
 
-//adicionei no novo array
-somarIdadesUsers.push(
-  receberIdadesUsers[0].age,
-  receberIdadesUsers[1].age,
-  receberIdadesUsers[2].age,
-  receberIdadesUsers[3].age,
-  receberIdadesUsers[4].age
-);
-
-console.log(somarIdadesUsers);
-
-const somarIdade = somarIdadesUsers.reduce((ele, age) => {
-  return ele + age;
-});
-console.log(somarIdade);
+// let total = 0;
+// for (i = 0; i < users.length; i++) {
+//   total += users[i].age;
+//   console.log(total);
+// }
