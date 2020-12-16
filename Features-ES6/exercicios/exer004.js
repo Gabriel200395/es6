@@ -6,14 +6,16 @@ const users = [
   { id: 5, name: "Louis", age: 15 },
 ];
 
+const [user1, user2, user3, user4, user5] = users;
 const alteraNomeUser = {
-  ...users,
-  [4]: { id: 5, name: "Gabriel", age: 25 },
+  user1,
+  user2,
+  user3,
+  user4,
+  user5: { id: 5, name: "Gabriel", age: 25 },
 };
 console.log(alteraNomeUser);
 
-console.log("---------------- exercicio 4 ---------------------");
-
 const NovoArray = [];
-NovoArray.push(alteraNomeUser[4]);
+NovoArray.push(alteraNomeUser.user5);
 console.log(NovoArray);
