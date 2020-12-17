@@ -6,16 +6,15 @@ const users = [
   { id: 5, name: "Louis", age: 15 },
 ];
 
-const [user1, user2, user3, user4, user5] = users;
-const alteraNomeUser = {
-  user1,
-  user2,
-  user3,
-  user4,
-  user5: { id: 5, name: "Gabriel", age: 25 },
-};
-console.log(alteraNomeUser);
+const alterarNameUser = users.filter((user) => {
+  if (user.id === 5) {
+    return (user.name = "Gabriel");
+  }
+});
 
-const NovoArray = [];
-NovoArray.push(alteraNomeUser.user5);
-console.log(NovoArray);
+const mapearUsers = users.map((user) => {
+  return user;
+});
+
+console.log(mapearUsers);
+console.log(alterarNameUser);
