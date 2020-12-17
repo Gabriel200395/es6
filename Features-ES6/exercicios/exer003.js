@@ -12,9 +12,9 @@ const alterarNameUser = users.filter((user) => {
   }
 });
 
-const mapearUsers = users.map((user) => {
+const mapearUsers = alterarNameUser.map((user) => {
   return user;
 });
 
-console.log(mapearUsers);
 console.log(alterarNameUser);
+console.log(mapearUsers);

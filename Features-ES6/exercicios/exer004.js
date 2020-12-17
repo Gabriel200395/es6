@@ -5,16 +5,15 @@ const users = [
   { id: 4, name: "Ronald", age: 33 },
   { id: 5, name: "Louis", age: 15 },
 ];
-
 const alterarNameUser = users.filter((user) => {
   if (user.id === 5) {
     return (user.name = "Gabriel");
   }
 });
 
-const mapearUsers = users.map((user) => {
+const mapearUsers = alterarNameUser.map((user) => {
   return user;
 });
 
-console.log(mapearUsers);
 console.log(alterarNameUser);
+console.log(mapearUsers);
